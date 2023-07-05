@@ -35,7 +35,7 @@ section {
     font-size: 1.5rem;
 }
 
-.nav-container ul li {
+.nav-li {
     position: relative;
     display: inline-block;
     height: 26px;
@@ -73,8 +73,7 @@ section {
     /* transition: 0.2s ease-in; */
 }
 
-
-.nav-container ul a {
+.nav-li a{
     font-family: Arial, Helvetica, sans-serif;
     color: #290349;
     font-size: 1.1rem;
@@ -82,7 +81,80 @@ section {
     text-decoration: none;
 }
 
+.nav-menu-open{
+    display: none;
+}
+.nav-menu-close{
+    display: none;
+}
 
+@media screen and (max-width:950px) {
+    .nav-container{
+        /* position: relative; */
+        padding: 1rem 2.5rem;
+    }
+
+    .nav-list{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #57059e;
+        width: 400px;
+        height: 100vh;
+        /* max-width: 100vh; */
+        padding:4rem 3rem;
+        top: 0;
+        right: -400px;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    .nav-li{
+        width: 100%;
+        margin: 1rem;
+        /* text-decoration: underline; */
+        /* padding:1.5rem 2rem; */
+    }
+    .nav-li a{
+        color: white;
+    }
+    .nav-menu-open{
+        display: block;
+        background-color: transparent;
+        border: 0;
+    }
+    .nav-menu-open i{
+        font-size: 1.8rem;
+    }
+    .nav-menu-close{
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        display: block;
+        background-color: transparent;
+        /* border: 0;/ */
+        border: 2px solid white;
+        border-radius: 50%;
+        padding: 0.5rem 0.75rem;
+
+    }
+    .nav-menu-close i{
+        color: white;
+        font-size: 1.8rem;
+    }
+    .menu-open{
+        right: 0;
+    }
+}
+@media screen and (max-width: 460px) {
+    .nav-list{
+        width: 100vw;
+        /* align-items: center; */
+        text-align: center;
+        padding: 4rem 0rem;
+    }
+}
 
 /* Home Section */
 
@@ -145,6 +217,20 @@ section {
     border-radius: 50%;
     box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
 }
+
+.aboutme-btn{
+    width: 150px;
+    padding: 0.8rem;
+    margin: 1rem 0rem;
+    color: white;
+    background-color: #e08300;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    box-shadow: rgba(169, 88, 2, 0.578) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: 0.3s;
+}
+
 
 .social-handle {
     margin: 0.5rem 0rem;
@@ -307,6 +393,18 @@ section {
         border-radius: 50%;
         box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
     }
+    .aboutme-btn{
+        width: 120px;
+        padding: 0.6rem;
+    }
+    .social-handle a{
+        width: 40px;
+        height: 40px;
+    }
+    .linkdn, .insta, .git-hub, .facebook{
+        font-size: 1.75rem;
+    }
+
 }
 @media screen and (max-width:460px){
     .intro-box h1 {
@@ -321,12 +419,13 @@ section {
     
     .img-inner {
         width: 65%;
-        min-width: 300px;
+        min-width: 270px;
         max-width: 400px;
         border-radius: 50%;
         box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
     }
     
+
 }
 
 /* About Section */
@@ -377,11 +476,6 @@ section {
     font-weight: 550;
 }
 
-@media screen and (max-width:480px) {
-    .about-head {
-        font-size: 2rem;
-    }
-}
 
 .linkdn-btn {
     width: 150px;
@@ -398,9 +492,18 @@ section {
 
 .linkdn-btn:hover {
     background-color: #b56c07;
-
+    
 }
 
+@media screen and (max-width:480px) {
+    .about-head {
+        font-size: 2rem;
+    }
+    .linkdn-btn{
+        width: 120px;
+        padding: 0.6rem;
+    }
+}
 /* Skills Section */
 .skill-section {
     background: linear-gradient(to bottom, #57059e, #4a00e0);
@@ -457,11 +560,20 @@ img {
 
 @media screen and (max-width:480px) {
     .skill-head {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .box {
         width: 140px;
+    }
+    .about-head{
+        font-size: 1.8rem;
+    }
+    .about-head i{
+        font-size: 1.7rem;
+    }
+    .name-intro{
+        font-size: 1.4rem;
     }
 }
 
@@ -656,7 +768,7 @@ img {
 
 @media screen and (max-width:480px) {
     .experience-head {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .exbox-container {
